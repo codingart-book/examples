@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script type="text/javascript">
+      // this is a comment in Javascript
+      //
+      
+      // insert p5.js code below
+      //
+
+      // function definition
+      // (replace ’void’ by ’function’)
+      function setup() {
+        // different function name (used to be ’size’)
+        createCanvas(640, 480);
+      }
+
+      function draw() {
+        // slightly different variable name
+        if (mouseIsPressed) {
+          fill(0);
+        } else {
+          fill(255);
+        }
+        ellipse(mouseX, mouseY, 80, 80);
+      }    
+    </script>
+  </head>
+<body></body>
+</html>
