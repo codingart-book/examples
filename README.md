@@ -19,6 +19,8 @@ Open Processing and the Examples box (File >> Examples...). In the examples box,
 
 ## How to manually install the library
 
-Download the library archive from the releases page (see [pre-release](https://github.com/codingart-book/code/releases/download/v0.0.1/CodingArt_Book.zip)) and unpack it into the Processing examples folder on your computer. This folder is usually located in your home directory and contains subfolders such as examples, libraries, tools etc.
+Download the [library archive](https://codingart-book.github.io/examples/CodingArtBookExamples.zip) and unpack it into the Processing examples folder on your computer. This folder is usually located in your home directory and contains subfolders such as examples, libraries, tools etc.
 
-Then restart Processing and you should be able to see the book examples in the "Contributed Examples" folder of the Examples browser (open this from File > Examples.. ).
+__Quick check:__ After this step, your Processing libraries folder should include a new folder "CodingArtBookExamples", which contains three files and the "examples" folder. All good? 🏄‍♂️
+
+Then restart Processing and you should be able to see the book examples in the "Contributed Examples" folder of the Examples browser (open this from File >> Examples.. ).
