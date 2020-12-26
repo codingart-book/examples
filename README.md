@@ -1,6 +1,6 @@
 # Coding Art
 
-This is the repository for the book's code. We publish the code of all examples in the book organized by chapter and section.
+This is the repository for all source code examples in the "Coding Art" book. We publish the code of all examples in the book organized by chapter and section.
 This content will also be available as a Processing example library soon.
 
 You can browse the examples by chapter here:
@@ -11,7 +11,13 @@ You can browse the examples by chapter here:
 * Chapter [Completion and production](/examples/4_chapter_completion_and_production)
 * Extras: [Miscellaneous code examples](/examples/5_extras)
 
-## How to install the library
+
+## How to easy-install the library
+
+Open Processing and the Examples box (File >> Examples...). In the examples box, click the button "Add examples..." at the top and enter "Coding Art" in the search box. Click the example in the results and install it. Done.
+
+
+## How to manually install the library
 
 Download the library archive from the releases page (see [pre-release](https://github.com/codingart-book/code/releases/download/v0.0.1/CodingArt_Book.zip)) and unpack it into the Processing examples folder on your computer. This folder is usually located in your home directory and contains subfolders such as examples, libraries, tools etc.
 
