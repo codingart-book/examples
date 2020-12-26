@@ -1,6 +1,9 @@
 # Coding Art
 
 This is the repository for all source code examples in the "Coding Art" book. We publish the code of all examples in the book organized by chapter and section.
+
+![library usage example](assets/processing_library.png)
+
 This content will also be available as a Processing example library soon.
 
 You can browse the examples by chapter here:
