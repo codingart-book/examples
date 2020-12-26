@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="createDistribution" name="Create examples distribution bundle">
+
+	<target name="copySources">
+    	<copy tofile="../docs/CodingArtBookExamples.txt">
+    	    <fileset file="../examples.properties"/>
+		</copy>
+    </target>
+
+    <target name="createDistribution" depends="copySources">
+		<zip destfile="../docs/CodingArtBookExamples.zip">
+			<zipfileset dir="../examples" prefix="examples"/>
+			<zipfileset file="../examples.properties"/>
+		</zip>
+    </target>
+
+</project>
