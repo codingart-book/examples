@@ -1,5 +1,5 @@
 // Coding Art Book
-// Yu Zhang + Mathias Funk, 2019
+// Yu Zhang + Mathias Funk, 2020
 
 // colored random rectangle example 1 
 

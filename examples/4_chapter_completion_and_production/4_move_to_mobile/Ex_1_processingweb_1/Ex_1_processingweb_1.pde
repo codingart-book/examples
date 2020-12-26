@@ -1,5 +1,5 @@
 // Coding Art Book
-// Yu Zhang + Mathias Funk, 2019
+// Yu Zhang + Mathias Funk, 2020
 
 // Processing mouse drawing example
 // find the code for the web in the web_content folder

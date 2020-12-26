@@ -1,5 +1,5 @@
 // Coding Art Book
-// Yu Zhang + Mathias Funk, 2019
+// Yu Zhang + Mathias Funk, 2020
 
 // drawing pressed characters in black/white on screen
 // with randomly placed dots inside of character shape
