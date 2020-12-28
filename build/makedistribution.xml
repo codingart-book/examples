@@ -9,10 +9,10 @@
 
     <target name="createDistribution" depends="copySources">
 		<zip destfile="../docs/CodingArtBookExamples.zip">
-			<zipfileset dir="../examples" prefix="examples"/>
-			<zipfileset file="../examples.properties"/>
-			<zipfileset file="../LICENSE"/>
-			<zipfileset file="../README.md"/>
+			<zipfileset dir="../examples" prefix="CodingArtBookExamples/examples"/>
+			<zipfileset file="../examples.properties" prefix="CodingArtBookExamples"/>
+			<zipfileset file="../LICENSE" prefix="CodingArtBookExamples"/>
+			<zipfileset file="../README.md" prefix="CodingArtBookExamples"/>
 		</zip>
     </target>
 
