@@ -17,14 +17,21 @@ You can browse the examples by chapter here:
 
 ## How to easy-install the library
 
-Open Processing and the Examples box (File >> Examples...). In the examples box, click the button "Add examples..." at the top and enter "Coding Art" in the search box. Click the example in the results and install it. Done.
+the easiest and fastest way to get the book examples into your Processing installation is by using the Processing Library Manager. Here is the picture-perfect walk-through on macOS (Windows and Linux should work in a similar way):
 
-Here is the picture-perfect walk-through on macOS (Windows and Linux should work in a similar way):
+Open Processing and the Examples box (File >> Examples...). In the examples box, click the button "Add examples..." at the top.
 
 ![easy installation step 1](assets/easy_step1.png)
+
+A new window opens with an overview of the available example libraries. Either search the list or enter "Coding Art" in the search box. Click the example in the results and then the button "Install". Done.
+
 ![easy installation step 2](assets/easy_step2.png)
+
+After a short moment, the example should be installed and become available in the examples box on the left side. The examples manager shows a green checkmark to indicate that the library was installed successfully.
+
 ![easy installation step 3](assets/easy_step3.png)
 
+We will update the library in the future, so you can get the latest version by clicking the "Update" button.
 
 ## How to manually install the library
 
