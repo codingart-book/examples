@@ -19,6 +19,12 @@ You can browse the examples by chapter here:
 
 Open Processing and the Examples box (File >> Examples...). In the examples box, click the button "Add examples..." at the top and enter "Coding Art" in the search box. Click the example in the results and install it. Done.
 
+Here is the picture-perfect walk-through on macOS (Windows and Linux should work in a similar way):
+
+![easy installation step 1](assets/easy_step1.png)
+![easy installation step 2](assets/easy_step2.png)
+![easy installation step 3](assets/easy_step3.png)
+
 
 ## How to manually install the library
 
