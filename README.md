@@ -1,12 +1,6 @@
-# Coding Art
+# Coding Art example library
 
-This is the repository for all source code examples in the "Coding Art" book. We publish the code of all examples in the book organized by chapter and section.
-
-![library usage example](assets/processing_library.png)
-
-This content will also be available as a Processing example library soon.
-
-You can browse the examples by chapter here:
+This is the repository for all source code examples in the "Coding Art" book. We publish the code of all examples in the book organized by chapter and section. You can browse the examples by chapter here:
 
 * Chapter [Idea to visuals](/examples/1_chapter_idea_to_visuals)
 * Chapter [Composition and structure](/examples/2_chapter_composition_and_structure)
@@ -14,10 +8,18 @@ You can browse the examples by chapter here:
 * Chapter [Completion and production](/examples/4_chapter_completion_and_production)
 * Extras: [Miscellaneous code examples](/examples/5_extras)
 
+**Let's install all examples as a Processing example library:**
 
-## How to easy-install the library
+## First things first: installing Processing
 
-the easiest and fastest way to get the book examples into your Processing installation is by using the Processing Library Manager. Here is the picture-perfect walk-through on macOS (Windows and Linux should work in a similar way):
+You need the [Processing](https://processing.org) coding environment to use the "Coding Art" examples. No problem, you can download it [here](https://processing.org/download). Installation should be quick and fast.
+
+![library usage example](assets/processing_library.png)
+
+
+## How to easy-install the example library
+
+The easiest and fastest way to get the book examples into your Processing environment is by using the _Processing Library Manager_. Here is the picture-perfect walk-through on macOS (Windows and Linux should work in a similar way):
 
 Open Processing and the Examples box (File >> Examples...). In the examples box, click the button "Add examples..." at the top.
 
@@ -33,7 +35,8 @@ After a short moment, the example should be installed and become available in th
 
 We will update the library in the future, so you can get the latest version by clicking the "Update" button.
 
-## How to manually install the library
+
+## How to manually install the example library
 
 Download the [library archive](https://codingart-book.github.io/examples/CodingArtBookExamples.zip) and unpack it into the Processing examples folder on your computer. This folder is usually located in your home directory and contains subfolders such as examples, libraries, tools etc.
 
