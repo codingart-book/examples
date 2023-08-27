@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<title>Device rotation example</title>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				-webkit-touch-callout: none; /* Safari */
+				-webkit-user-select: none; /* Chrome */     
+				-moz-user-select: none; /* Firefox */
+				-ms-user-select: none; /* Internet Explorer/Edge */
+				user-select: none;
+				touch-action: none;
+			}
+		 </style>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		let gridSize, cols, rows;
+		let color1 = [25, 40, 90], 
+				color2 = [25, 40, 60],
+				color3 = [355, 65, 85],
+				color4 = [25, 70, 92],
+				color5 = [25, 80, 90],
+				color6 = [45, 90, 100];
+
+		function setup() {
+				createCanvas(windowWidth, windowHeight);
+				noStroke();
+				ellipseMode(CENTER);
+				rectMode(CENTER);
+				frameRate(15);
+
+				// define the grid size
+				gridSize = 80;
+
+				// calculate the number of columns and rows
+				cols = ceil(width/gridSize);
+				rows = ceil(height/gridSize);
+		}
+
+		function windowResized() {
+				resizeCanvas(windowWidth, windowHeight);
+				// recalculate the number of columns and rows
+				// depending on new device orientation
+				cols = ceil(width/gridSize);
+				rows = ceil(height/gridSize);
+		}
+
+		function draw() {
+			background(255);
+			blendMode(HARD_LIGHT);
+			
+			// calculate the transparency and displacement based on touches
+			// map touch coordinates to height and width
+			let l1_transparency = 100 + 55 * abs(sin(frameCount/17.));
+			let l1_displacement = 0;
+			if(touches.length > 0) {
+				l1_transparency = map(touches[0].y, 0, height, 0, 255);
+				l1_displacement = map(touches[0].x, 0, width, -20, 20);
+			}
+			let l2_transparency = 150 + 55 * abs(-sin(HALF_PI + frameCount/53.));
+			let l2_displacement = 0;
+			if(touches.length > 1) {
+				l2_transparency = map(touches[1].y, 0, height, 0, 255);
+				l2_displacement = map(touches[1].x, 0, width, -20, 20);
+			}
+			let l3_transparency = 100 + 100 * sin(HALF_PI + frameCount/10.);
+			let l3_displacement = 0;
+			if(touches.length > 2) {
+				l3_transparency = map(touches[2].y, 0, height, 0, 255);
+				l3_displacement = map(touches[2].x, 0, width, -20, 20);
+			}
+			let l4_transparency = 100 + 155 * sin(PI + frameCount/20.);
+			let l4_displacement = 0;
+			if(touches.length > 3) {
+				l4_transparency = map(touches[3].y, 0, height, 0, 255);
+				l4_displacement = map(touches[3].x, 0, width, -20, 20);
+			}
+			let l5_transparency = 100 + 155 * sin(-HALF_PI + frameCount/19.);
+			let l5_displacement = 0;
+			if(touches.length > 4) {
+				l5_transparency = map(touches[4].y, 0, height, 0, 255);
+				l5_displacement = map(touches[4].x, 0, width, -20, 20);
+			}
+
+			let rotationXScale = map(abs(rotationX), 0, 90, 1, 2);
+			let rotationYScale = map(abs(rotationY), 0, 90, 1, 2);
+
+
+			// draw multiple layers
+			for (let y = 0; y < rows; y++) {
+					for (let x = 0; x < cols; x++) {
+							push();
+
+							// move to grid cell
+							translate(x*gridSize, y*gridSize);
+							// move to center of cell 
+							translate(gridSize/2, gridSize/2);
+
+							// depending on y rotation adjust scaling along x axis
+							if(rotationY > 0) {
+								scale(map(x, 0, cols, 1, rotationYScale))
+							} else {
+								scale(map(x, 0, cols, rotationYScale, 1))                    
+							}
+							// depending on x rotation adjust scaling along y axis
+							if(rotationX > 0) {
+								scale(map(y, 0, rows, 1, rotationXScale))
+							} else {
+								scale(map(y, 0, rows, rotationXScale, 1))                    
+							}
+
+							// l1
+							push();
+							translate(l1_displacement);
+							fill(color1.concat([l1_transparency]));
+							triangle(-20, -20, 35, 10, 0, 10);
+							pop();
+
+							// l2
+							push();
+							translate(0, l2_displacement);
+							fill(color2.concat([l2_transparency]));
+							rect(0, 0, 75, 75);
+							pop();
+
+							// l3
+							push();
+							translate(l3_displacement);
+							fill(color3.concat([l3_transparency]));
+							ellipse(20, 20, 60 + 20 * sin(HALF_PI + frameCount/50.), 60 + 20 * sin(HALF_PI + frameCount/50.));
+							pop();
+
+							// l4
+							push();
+							translate(l4_displacement, 0);
+							fill(color4.concat([l4_transparency]));
+							ellipse(-20, -20, 50, 50);
+							pop();
+
+							// l5
+							push();
+							translate(0, l5_displacement);
+							fill(color5.concat([l5_transparency]));
+							triangle(-20, -20, 35, 35, 0, 30);
+							pop();
+
+							// l6
+							push();
+							fill(color6);
+							rotate(radians(45));
+							rect(0, 0, 40, 40);
+							pop();
+
+							pop();
+						}
+				}
+		}
+
+    function touchEnded() {
+      DeviceOrientationEvent.requestPermission()
+        .then(response => {
+            if (response == 'granted') {
+              // now acceleration and rotation sensing should work
+            }
+        })
+        .catch(console.error)        
+     }
+
+  </script>
+</body>
+</html>

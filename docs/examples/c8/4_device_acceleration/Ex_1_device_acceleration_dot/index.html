@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Acceleration example</title>
+  <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-touch-callout: none; /* Safari */
+      -webkit-user-select: none; /* Chrome */     
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
+             touch-action: none;
+    }
+  </style>
+  <script type="text/javascript">
+    
+    let x, y, z;
+    function setup() {
+        createCanvas(windowWidth, windowHeight);
+        ellipseMode(CENTER);
+        rectMode(CENTER);
+        noStroke();
+
+        x = width/2, y = height/2, z = 100;
+    }
+
+    function draw() {
+      background(0);
+      // compute change in acceleration
+      x += (accelerationX - pAccelerationX) * 2;
+      y += (accelerationY - pAccelerationY) * 2;
+      z += (accelerationZ - pAccelerationZ) * 2;
+      // adjust fill color to acceleration
+      fill(255 - (x - 100), z, 255 - (y - 100));
+      // draw circle at position influenced by acceleration
+      ellipse(x, y, z, z);
+    }
+
+    function touchEnded() {
+      x = width/2, y = height/2, z = 100;
+      DeviceOrientationEvent.requestPermission()
+        .then(response => {
+            if (response == 'granted') {
+              // now acceleration and rotation sensing should work
+            }
+        })
+        .catch(console.error)        
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+
+      // don’t forget to recompute variables that depend on the window
+      x = width/2, y = height/2, z = 100;
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

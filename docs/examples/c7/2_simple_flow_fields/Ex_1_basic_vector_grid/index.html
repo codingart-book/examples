@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Basic vector grid example</title>
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+	<script type="text/javascript">
+		// define variables
+		let gridSize, noiseResolution;
+		let cols, rows;
+		let flowField = [];
+
+		function setup() {
+		    createCanvas(800, 800);
+		    background(255);
+
+		    // Define the grid size
+		    gridSize = 16;
+			// Define noise resolution
+			noiseResolution = 100;
+		    // Calculate the number of columns and rows
+		    cols = floor(width/gridSize);
+		    rows = floor(height/gridSize);
+		    
+		    // Create 2D array of vectors based on Perlin noise
+		    for (let y = 0; y < rows; y++) {
+		        flowField[y] = [];
+		        for (let x = 0; x < cols; x++) {
+		            let angle = noise(x/noiseResolution, y/noiseResolution)*TWO_PI*4;
+		            let v = p5.Vector.fromAngle(angle);
+		            flowField[y][x] = v;
+		        }
+		    }
+		}
+
+		function draw() {
+		    // Draw lines following vectors on the grid 
+		    for (let y = 0; y < rows; y++) {
+		        for (let x = 0; x < cols;x++) {
+		            push();
+		            
+		            // Transform to grid-space
+		            translate(x*gridSize, y*gridSize);
+		            // draw cell
+		            fill(250, 220, 200);
+		            noStroke()
+		            rect(1, 1, gridSize - 2, gridSize - 2)
+		            // move to center of cell
+		            translate(gridSize/2, gridSize/2);
+		            // draw line in direction of flow field cell
+		            stroke(80, 10, 0);
+		            strokeWeight(1);
+		            let v = flowField[y][x];
+		            line(0, 0, v.x * gridSize/2, v.y * gridSize/2);
+
+		            pop();
+		        }
+		    }
+		}
+	</script>
+</head>
+<body></body>
+</html>

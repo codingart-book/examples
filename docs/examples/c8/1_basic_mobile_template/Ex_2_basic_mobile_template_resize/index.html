@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Basic template for mobile, with resize</title>
+  <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-touch-callout: none; /* Safari */
+      -webkit-user-select: none; /* Chrome */     
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
+             touch-action: none;
+    }
+  </style>
+  <script type="text/javascript">
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      frameRate(20);
+
+      // ...
+    }
+    
+    function draw() {
+      // ...
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+
+      // don’t forget to recompute variables that depend on the window
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
