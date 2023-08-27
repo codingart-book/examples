@@ -3,13 +3,12 @@
 
 // interpolation between two colored balls 1 
 
-PVector left, right;
+PVector left = new PVector(50, 0, color(0, 255, 255));
+PVector right = new PVector(350, 0, color(0, 255, 255));
 void setup() {
   size(400, 200); 
   noStroke(); 
   colorMode(HSB);
-  left = new PVector(50, 0, color(0, 255, 255));
-  right = new PVector(350, 0, color(0, 255, 255));
 }
 
 void draw() {

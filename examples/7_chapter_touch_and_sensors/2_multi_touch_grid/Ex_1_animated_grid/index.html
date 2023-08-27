@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Basic grid with animation</title>
+  <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-touch-callout: none; /* Safari */
+      -webkit-user-select: none; /* Chrome */     
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
+             touch-action: none;
+    }
+  </style>
+  <script type="text/javascript">
+    
+    let gridSize, cols, rows;
+    let color1 = [25, 40, 90], 
+      color2 = [25, 40, 60],
+      color3 = [355, 65, 85],
+      color4 = [25, 70, 92],
+      color5 = [25, 80, 90],
+      color6 = [45, 90, 100];
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      noStroke();
+      ellipseMode(CENTER);
+      rectMode(CENTER);
+      frameRate(15);
+
+      // define the grid size
+      gridSize = 80;
+
+      // calculate the number of columns and rows
+      cols = ceil(width/gridSize);
+      rows = ceil(height/gridSize);
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+      // recalculate the number of columns and rows
+      // depending on new device orientation
+      cols = ceil(width/gridSize);
+      rows = ceil(height/gridSize);
+    }
+
+    function draw() {
+      background(255);
+      blendMode(HARD_LIGHT);
+
+      // draw multiple layers
+      for(let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+          push();
+
+          // move to grid cell
+          translate(x*gridSize, y*gridSize);
+          // move to center of cell 
+          translate(gridSize/2, gridSize/2);
+
+          // l1
+          fill(color1.concat([100 + 155 * sin(-HALF_PI + frameCount/20.)]));
+          triangle(-20, -20, 35, 10, 0, 10);
+
+          // l2
+          fill(color2.concat([150 + 55 * abs(-sin(HALF_PI + frameCount/7.))]));
+          rect(0, 0, 75, 75);
+
+          // l3
+          fill(color3.concat([100 + 100 * sin(HALF_PI + frameCount/5.)]));
+          ellipse(20, 20, 60 + 20 * sin(HALF_PI + frameCount/50.), 60 + 20 * sin(HALF_PI + frameCount/50.));
+
+          // l4
+          fill(color4.concat([100 + 155 * sin(PI + frameCount/10.)]));
+          ellipse(-20, -20, 50, 50);
+
+          // l5
+          fill(color5.concat([100 + 155 * sin(-HALF_PI + frameCount/9.)]));
+          triangle(-20, -20, 35, 35, 0, 30);
+
+          // l6
+          fill(color6.concat([100 + 55 * abs(sin(frameCount/3.))]));
+          rotate(radians(45));
+          rect(0, 0, 40, 40);
+
+          pop();
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

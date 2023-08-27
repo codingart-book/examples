@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example template</title>
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+    <script type="text/javascript">
+    // p5.js code
+
+    function setup() {
+      // use the variables for display width and height instead of concrete numbers
+      createCanvas(displayWidth, displayHeight);
+    }
+    function draw() {
+      if (mouseIsPressed) {
+        fill(0);
+      } else {
+        fill(255);
+      }
+      ellipse(mouseX, mouseY, 80, 80);
+    }
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>
